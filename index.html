@@ -37,7 +37,7 @@
             >
                 <a-entity
                     id="bowser-model"
-                    rotation="135 0 -90"
+                    rotation="0 45 -90"
                     position="0 -1 1"
                     scale="0.38415883988622177 0.38415883988622177 0.38415883988622177"
                     animation-mixer="loop: repeat"
@@ -46,7 +46,34 @@
                     gesture-handler
                 ></a-entity>
             </a-marker>
+             <a-assets>
+                <a-asset-item
+                    id="animated-asset"
+                    src="asset.gltf"
+                ></a-asset-item>
+            </a-assets>
 
+            <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="marker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-entity
+                    id="bowser-model"
+                    rotation="0 0 -90"
+                    position="-1 -1 -1"
+                    scale="0.38415883988622177 0.38415883988622177 0.38415883988622177"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
     </body>
